@@ -16,12 +16,16 @@ const HeaderSection = () => {
           <span className="font-[800] font-extrabold    ">Fullstack</span>{" "}
           Developer
         </div>
+        <div className="text-[28px] lg:text-[48px] font-[800] font-extrabold lg:font-[400] lg:font-regular leading-[32px] lg:leading-[56px] tracking-[-2%] text-[#000000]    ">
+          Based in{" "}
+          <span className="font-[800] font-extrabold    ">Lagos.</span>
+        </div>
 
         <div className="font-[400] font-regular text-[16px] leading-[24px] tracking-[2%] text-[#71717A]    ">
-          I'm Evren Shah Lorem Ipsum is simply dummy text of the printing and
-          typesetting industry. Lorem Ipsum has been the industry's standard
-          dummy text ever since the 1500s, when an unknown printer took a galley
-          of type and scrambled it to specimen book.
+          I build responsive, user-focused web applications with React,
+          TypeScript, Node.js and Python. I care about scalable front-end
+          architecture, clean REST API integration, and interfaces that stay
+          fast and readable as they grow.
         </div>
 
         <div className="mt-8 lg:mt-[50px] flex gap-4 sm:gap-[32px]">
@@ -30,6 +34,8 @@ const HeaderSection = () => {
               key={label}
               href={href}
               aria-label={label}
+              target={href.startsWith("mailto:") ? undefined : "_blank"}
+              rel={href.startsWith("mailto:") ? undefined : "noreferrer"}
               className="flex w-[48px] h-[48px] gap-[8px] p-[12px] items-center justify-center rounded-[4px] border-[2px] border-black bg-white text-black opacity-100 transition-colors hover:bg-black hover:text-white"
             >
               <Icon size={20} />

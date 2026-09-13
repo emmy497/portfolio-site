@@ -29,10 +29,14 @@ const Navbar = () => {
           ))}
         </div>
 
-        <button className="hidden lg:flex bg-[#000000] items-center gap-[8px] cursor-pointer text-white py-[16px] px-[20px] rounded-[4px]">
+        <a
+          href="/IsraelEmmanuel.pdf"
+          download="Emmanuel-Israel-CV.pdf"
+          className="hidden lg:flex bg-[#000000] items-center gap-[8px] cursor-pointer text-white py-[16px] px-[20px] rounded-[4px] transition-transform duration-200 ease-out hover:-translate-y-0.5 motion-reduce:transition-none motion-reduce:hover:translate-y-0"
+        >
           Resume
           <img src="/images/download.png" alt="" />
-        </button>
+        </a>
 
         <button
           type="button"
@@ -70,13 +74,16 @@ const Navbar = () => {
                 {label}
               </a>
             ))}
-            <button
+            <a
+              href="/IsraelEmmanuel.pdf"
+              download="Emmanuel-Israel-CV.pdf"
               tabIndex={menuOpen ? undefined : -1}
+              onClick={() => setMenuOpen(false)}
               className="bg-[#000000] flex w-fit items-center gap-[8px] cursor-pointer text-white py-[12px] px-[18px] rounded-[4px]"
             >
               Resume
               <img src="/images/download.png" alt="" />
-            </button>
+            </a>
           </div>
         </div>
       </div>

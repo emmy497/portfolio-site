@@ -1,11 +1,7 @@
 import { useState } from "react";
 import type { FormEvent } from "react";
-import { SOCIAL_LINKS } from "../data/socials";
+import { SOCIAL_LINKS, EMAIL } from "../data/socials";
 import Reveal from "./Reveal";
-
-// PLACEHOLDER CONTACT DETAILS — swap these for your real address and number.
-const EMAIL = "Youremail@gmail.com";
-const PHONE = "1234567890";
 
 const FIELD_CLASSES =
   "w-full rounded-[4px] border-[2px] border-black/15 bg-white px-4 py-3 text-[15px] text-black placeholder:text-black/40 transition-colors duration-200 focus:border-black focus:outline-none";
@@ -56,7 +52,11 @@ const ContactSection = () => {
     >
       <div className="mx-auto grid max-w-[1160px] gap-10 lg:grid-cols-2 lg:gap-[80px] lg:items-center">
         <Reveal>
-          <form onSubmit={handleSubmit} className="flex flex-col gap-4" noValidate>
+          <form
+            onSubmit={handleSubmit}
+            className="flex flex-col gap-4"
+            noValidate
+          >
             <input
               type="text"
               value={form.name}
@@ -110,6 +110,8 @@ const ContactSection = () => {
                     key={label}
                     href={href}
                     aria-label={label}
+                    target={href.startsWith("mailto:") ? undefined : "_blank"}
+                    rel={href.startsWith("mailto:") ? undefined : "noreferrer"}
                     className="flex h-[44px] w-[44px] items-center justify-center rounded-[4px] border-[2px] border-black bg-white text-black transition-colors duration-200 hover:bg-black hover:text-white"
                   >
                     <Icon size={18} />
@@ -128,24 +130,17 @@ const ContactSection = () => {
             </h2>
 
             <p className="text-[15px] lg:text-[16px] leading-relaxed text-[#71717A]">
-              I seek to push the limits of creativity to create high-engaging,
-              user-friendly, and memorable interactive experiences.
+              I'm open to backend and full-stack roles, and to interesting
+              freelance work. Tell me what you're building and I'll get back to
+              you.
             </p>
 
-            <div className="mt-2 flex flex-col gap-2">
-              <a
-                href={`mailto:${EMAIL}`}
-                className="w-fit text-[18px] lg:text-[22px] font-bold text-black underline-offset-4 transition-colors duration-200 hover:underline"
-              >
-                {EMAIL}
-              </a>
-              <a
-                href={`tel:${PHONE}`}
-                className="w-fit text-[18px] lg:text-[22px] font-bold text-black underline-offset-4 transition-colors duration-200 hover:underline"
-              >
-                {PHONE}
-              </a>
-            </div>
+            <a
+              href={`mailto:${EMAIL}`}
+              className="mt-2 w-fit text-[17px] lg:text-[22px] font-bold break-all text-black underline-offset-4 transition-colors duration-200 hover:underline"
+            >
+              {EMAIL}
+            </a>
           </div>
         </Reveal>
       </div>
