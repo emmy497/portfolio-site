@@ -8,17 +8,20 @@ const HeaderSection = () => {
     >
       <div className="relative z-10 w-full lg:min-w-[500px] lg:max-w-[560px] flex flex-col gap-[20px]">
         <div className="text-[28px] lg:text-[48px] font-[800] font-extrabold lg:font-[400] lg:font-regular leading-[32px] lg:leading-[56px] tracking-[-2%] text-[#000000]    ">
-          Hello i'm{" "}
-          <span className="font-[800] font-extrabold    ">Emmanuel.</span>
+          Hello i'm
+          <span className="ml-2 lg:ml-4 font-[800] font-extrabold">
+            Emmanuel.
+          </span>
         </div>
         <div className="text-[28px] lg:text-[48px] font-[800] font-extrabold lg:font-[400] lg:font-regular leading-[32px] lg:leading-[56px] tracking-[-2%] text-[#000000]    ">
-          {" "}
-          <span className="font-[800] font-extrabold    ">Fullstack</span>{" "}
-          Developer
+          <span className="font-[800] font-extrabold">Fullstack</span>
+          <span className="text-outline ml-2 lg:ml-4 font-[800] font-extrabold">
+            Developer
+          </span>
         </div>
         <div className="text-[28px] lg:text-[48px] font-[800] font-extrabold lg:font-[400] lg:font-regular leading-[32px] lg:leading-[56px] tracking-[-2%] text-[#000000]    ">
-          Based in{" "}
-          <span className="font-[800] font-extrabold    ">Lagos.</span>
+          Based in
+          <span className="ml-2 lg:ml-4 font-[800] font-extrabold">Lagos.</span>
         </div>
 
         <div className="font-[400] font-regular text-[16px] leading-[24px] tracking-[2%] text-[#71717A]    ">

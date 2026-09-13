@@ -21,3 +21,33 @@ body {
      unreadable. */
   background-color: #ffffff;
 }
+
+/* The hollow word in the hero ("Developer") — outlined letterforms, no fill.
+   Solid black is the base state on purpose: a browser without
+   -webkit-text-stroke would render `color: transparent` as an invisible
+   word, so the outline is only applied where the stroke will actually
+   draw. */
+.text-outline {
+  color: #000000;
+}
+
+@supports (-webkit-text-stroke: 1px #000) {
+  .text-outline {
+    /* Kept deliberately thin. The word is set at weight 800, so the stems are
+       already heavy — a 2px stroke eats almost all the white inside them and
+       the word reads as a solid band rather than hollow type. */
+    -webkit-text-stroke: 1px #000000;
+    color: transparent;
+    /* The stroke grows each glyph outward from its edge, so letters that sit
+       comfortably apart when filled will collide once outlined. Buy the
+       width back. */
+    letter-spacing: 0.06em;
+  }
+
+  @media (min-width: 1024px) {
+    .text-outline {
+      -webkit-text-stroke: 1.5px #000000;
+      letter-spacing: 0.08em;
+    }
+  }
+}
