@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+
+/* index.css */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Anyone who's asked their OS to reduce motion gets an instant jump
+   instead of the animated scroll. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  /* Explicit, so the page stays white regardless of the visitor's OS/browser
+     dark-mode preference — without this, a transparent body can fall back
+     to a dark canvas on some dark-mode browsers, making black text
+     unreadable. */
+  background-color: #ffffff;
+}
